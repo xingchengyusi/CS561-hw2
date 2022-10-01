@@ -1,0 +1,15 @@
+#!/usr/bin/env python3
+
+import os
+
+print('start pre-commit hook.')
+res = os.system('black *.py --check')
+
+if res == 0:
+    print('Perfact format~')
+    exit(0)
+else:
+    print('Some codes need to be format! please fix it.')
+
+print('pre-commit hook script ended.')
+exit(-1)
